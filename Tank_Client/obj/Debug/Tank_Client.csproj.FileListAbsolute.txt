@@ -1,0 +1,6 @@
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe.config
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\bin\Debug\Tank_Client.pdb
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.exe
+c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.pdb
