@@ -40,6 +40,26 @@ namespace Tank_Client
            stream.Close();          //close network stream
         }
 
+        public static void sendKeyData(String msg)
+         {
+         
+            //connecting to server socket with port 6000
+           clientSocket.Connect(IPAddress.Parse("127.0.0.1"), 6000);
+           stream = clientSocket.GetStream();
+
+            //joining message to server
+           byte[] ba = Encoding.ASCII.GetBytes(msg);
+
+           for (int x = 0; x < ba.Length;x++ ) {
+               Console.WriteLine(ba[x]);
+           }
+
+           stream.Write(ba,0,ba.Length);        //send join# to server
+           stream.Flush();
+           stream.Close();          //close network stream
+        }
+
+
 
         public static void receiveData()
         {

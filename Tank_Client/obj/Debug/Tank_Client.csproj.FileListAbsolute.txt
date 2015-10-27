@@ -16,3 +16,9 @@ E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\obj\Debug\Tank_Client.pdb
 E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe
 E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\bin\Debug\Tank_Client.pdb
 E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\bin\Debug\Tank_Client.exe.config
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.exe
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.pdb
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\bin\Debug\Tank_Client.exe
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\bin\Debug\Tank_Client.pdb
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
