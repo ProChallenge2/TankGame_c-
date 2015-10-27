@@ -15,10 +15,11 @@ namespace Tank_Client
         static TcpListener listener ;
         static System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();      //create a TcpCLient socket to connect to server
         static NetworkStream stream=null;
-
+        static Main torkenizer = new Main();
+       
+      //  static map mp = null;
         public Commiunicator()
         {
-
         }
         public static void sendData()
         {
@@ -60,21 +61,25 @@ namespace Tank_Client
 
                     //Fetch the messages from the server
                     int asw = 0;
+                    int count = 2;
                     //create a network stream using connecion
                     NetworkStream serverStream = new NetworkStream(socket);
                     List<Byte> inputStr = new List<byte>();
 
+
                     //fetch messages from  server
                     while (asw != -1)
                     {
+                        count++;
                         asw = serverStream.ReadByte();
                         inputStr.Add((Byte)asw);
                     }
 
                     String messageFromServer = Encoding.UTF8.GetString(inputStr.ToArray());
-
-                    Main torkenizer = new Main();
-                    Console.Write("Response from server to join "+torkenizer.serverJoinMsg(messageFromServer));
+                   
+                    Console.WriteLine("Response from server to join " + torkenizer.serverJoinMsg(messageFromServer));
+                    torkenizer.tokenizeMessage(messageFromServer);
+                    //Console.WriteLine("eeeeeeeeeeeeeee--" + torkenizer.tokenizeMessage(messageFromServer) + "--eeeeeeeeeeeeeeee");
                     Console.WriteLine(messageFromServer);
                     serverStream.Close();       //close the netork stream
                     

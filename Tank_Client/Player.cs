@@ -20,6 +20,7 @@ namespace Tank_Client
                 + "\n Y Coordinate " + this.playerLocationY + "\n Current Direction " + this.direction
                 ;
         }
+
     }
 }
 

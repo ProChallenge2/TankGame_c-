@@ -4,3 +4,15 @@ c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_
 c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
 c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.exe
 c:\users\wiranji dinelka\documents\visual studio 2013\Projects\Tank_Client\Tank_Client\obj\Debug\Tank_Client.pdb
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe.config
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\obj\Debug\Tank_Client.exe
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\obj\Debug\Tank_Client.pdb
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\bin\Debug\Tank_Client.pdb
+D:\Semester 4\Pro challenge 2\Tank_Client\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe.config
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\obj\Debug\Tank_Client.exe
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\obj\Debug\Tank_Client.pdb
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\bin\Debug\Tank_Client.exe
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\bin\Debug\Tank_Client.pdb
+E:\Semester 4\ProChallenge\Tank_Client\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache

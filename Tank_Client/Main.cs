@@ -13,6 +13,19 @@ namespace Tank_Client
         private const String ALREADY_ADDED = "ALREADY_ADDED#";
         private const String GAME_ALREADY_STARTED = "GAME_ALREADY_STARTED";
         private Player player = new Player();
+        public map mp= new map();
+        public static char[,] grid=null;
+        bool a = false;
+        bool b = false;
+
+
+        public Main()
+        {
+
+            grid=mp.getGrid();
+        }
+
+       
         public String jointoserver()
         {
             return "JOIN#";
@@ -29,5 +42,62 @@ namespace Tank_Client
             }
 
         }
+
+        public void tokenizeMessage(String reply) { 
+          
+             
+            char [] del = {':','#'};
+            String[] array= reply.Split(del);
+            
+            
+            if(array[0]=="I"){
+                
+                
+                mp.setBriksCordinates(array);
+                mp.setStoneCordinates(array);
+                mp.setwaterCordinates(array);
+                a = true;
+
+
+            }
+            else if(array[0]=="S"){
+                String[] arrayNew = array[1].Split(';');
+                
+                player.playerNumber = Int32.Parse(arrayNew[0].Substring(1)); 
+                String[] location= arrayNew[1].Split(',');
+
+               
+                player.playerLocationX = Int32.Parse(location[0]);
+                player.playerLocationY = Int32.Parse(location[1]);
+
+                player.direction = Int32.Parse(arrayNew[2]);
+
+                switch (player.direction) { 
+                    case 0:
+                        grid[player.playerLocationX, player.playerLocationY] = '^';
+                        break;
+                    case 1:
+                        grid[player.playerLocationX, player.playerLocationY] = '>';
+                        break;
+                    case 2:
+                        grid[player.playerLocationX, player.playerLocationY] = 'V';
+                        break;
+                    case 3:
+                        grid[player.playerLocationX, player.playerLocationY] = '<';
+                        break;
+
+                }
+                b = true;
+
+            }
+            mp.setGrid(grid);
+            if (a & b)
+            {
+                mp.showGrid();
+              
+            }
+        }
+
+     
     }
 }
