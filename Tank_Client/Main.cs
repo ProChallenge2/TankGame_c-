@@ -13,6 +13,7 @@ namespace Tank_Client
         private const String ALREADY_ADDED = "ALREADY_ADDED#";
         private const String GAME_ALREADY_STARTED = "GAME_ALREADY_STARTED";
         private Player player = new Player();
+        private Player[] playr = new Player[5];
         public map mp= new map();
         public static char[,] grid=null;
         bool a = false;
@@ -23,6 +24,7 @@ namespace Tank_Client
         {
 
             grid=mp.getGrid();
+
         }
 
        
@@ -65,8 +67,6 @@ namespace Tank_Client
                 
                 player.playerNumber = Int32.Parse(arrayNew[0].Substring(1)); 
                 String[] location= arrayNew[1].Split(',');
-
-               
                 player.playerLocationX = Int32.Parse(location[0]);
                 player.playerLocationY = Int32.Parse(location[1]);
 
@@ -74,27 +74,71 @@ namespace Tank_Client
 
                 switch (player.direction) { 
                     case 0:
-                        grid[player.playerLocationX, player.playerLocationY] = '^';
+                        grid[player.playerLocationY, player.playerLocationX] = '^';
                         break;
                     case 1:
-                        grid[player.playerLocationX, player.playerLocationY] = '>';
+                        grid[player.playerLocationY, player.playerLocationX] = '>';
                         break;
                     case 2:
-                        grid[player.playerLocationX, player.playerLocationY] = 'V';
+                        grid[player.playerLocationY, player.playerLocationX] = 'V';
                         break;
                     case 3:
-                        grid[player.playerLocationX, player.playerLocationY] = '<';
+                        grid[player.playerLocationY, player.playerLocationX] = '<';
                         break;
 
                 }
                 b = true;
 
             }
+            else if (array[0] == "G"){
+               
+                for (int i = 1; i < array.Length - 2; i++)
+                {
+                    if (playr[i] == null)
+                    {
+                        playr[i] = new Player();
+                    }
+
+                    playerDetails(array[i],playr[i]);
+                }
+                
+            }
             mp.setGrid(grid);
             if (a & b)
             {
                 mp.showGrid();
-              
+            }
+        }
+        public void playerDetails(String det,Player player)
+        {
+
+            String[] arNew = det.Split(';');
+            grid[player.playerLocationY, player.playerLocationX] = '0';
+            
+                
+            player.playerNumber = Int32.Parse(arNew[0].Substring(1));
+            String[] location = arNew[1].Split(',');
+            
+            player.playerLocationX = Int32.Parse(location[0]);
+            player.playerLocationY = Int32.Parse(location[1]);
+
+            player.direction = Int32.Parse(arNew[2]);
+
+            switch (player.direction)
+            {
+                case 0:
+                    grid[player.playerLocationY, player.playerLocationX] = '^';
+                    break;
+                case 1:
+                    grid[player.playerLocationY, player.playerLocationX] = '>';
+                    break;
+                case 2:
+                    grid[player.playerLocationY, player.playerLocationX] = 'v';
+                    break;
+                case 3:
+                    grid[player.playerLocationY, player.playerLocationX] = '<';
+                    break;
+
             }
         }
 
