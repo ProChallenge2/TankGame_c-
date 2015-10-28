@@ -115,10 +115,7 @@ namespace Tank_Client
             {
                 mp.showGrid();
             }
-<<<<<<< HEAD
-           
-=======
->>>>>>> e13d8c501d0f65f0e3556a86002d38bf044d5ce0
+
         }
         public void playerDetails(String det,Player player)
         {

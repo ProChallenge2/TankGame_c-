@@ -13,7 +13,7 @@ namespace Tank_Client
     public partial class ArrowKey : Form
     {
 
-        Commiunicator com = new Commiunicator();
+        //Commiunicator com = new Commiunicator();
         public ArrowKey()
         {
             InitializeComponent();
@@ -22,27 +22,38 @@ namespace Tank_Client
 
         private void button2_Click(object sender, EventArgs e)
         {
+
+            Console.WriteLine("--------------------------------");
             Commiunicator.sendData(Constant.RIGHT);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("--------------------------------");
             Commiunicator.sendData(Constant.UP);
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("--------------------------------");
             Commiunicator.sendData(Constant.C2S_INITIALREQUEST);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("--------------------------------");
             Commiunicator.sendData(Constant.DOWN);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            Console.WriteLine("--------------------------------");
             Commiunicator.sendData(Constant.LEFT);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Commiunicator.sendData(Constant.SHOOT);
         }
 
         

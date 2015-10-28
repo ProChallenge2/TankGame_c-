@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace Tank_Client
 {
@@ -12,16 +13,32 @@ namespace Tank_Client
         static void Main(string[] args)
         {
 
-            Commiunicator c = new Commiunicator();
-            ArrowKey form = new ArrowKey();
-
-            form.Show();
-            //init client connection to server
-          //  Commiunicator.sendData();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
 
-            //init a socket for call back from the server to fetch messages
-            Commiunicator.receiveData();
+            Thread t1 = new Thread(
+                    new ThreadStart(
+                            delegate()
+                            {
+                                Application.Run(new ArrowKey());
+                            }
+                        )
+                );
+
+            Thread t2 = new Thread(
+                   new ThreadStart(
+                           delegate()
+                           {
+                               Commiunicator.receiveData();
+                           }
+                       )
+               );
+
+            t1.Start();
+            t2.Start();
+
+
             while (true) { }
         }
     }

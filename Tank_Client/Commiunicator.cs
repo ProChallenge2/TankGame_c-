@@ -14,7 +14,7 @@ namespace Tank_Client
         static Socket socket = null; 
         static bool error = false;    
         static TcpListener listener ;
-        static System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();      //create a TcpCLient socket to connect to server
+        static System.Net.Sockets.TcpClient clientSocket;     //create a TcpCLient socket to connect to server
         static NetworkStream stream=null;
         static Main torkenizer = new Main();
        
@@ -24,21 +24,32 @@ namespace Tank_Client
         }
         public static void sendData(String s)
         {
-         
-            //connecting to server socket with port 6000
-           clientSocket.Connect(IPAddress.Parse("127.0.0.1"), 6000);
-           stream = clientSocket.GetStream();
+            try
+            {
+                clientSocket = new System.Net.Sockets.TcpClient(); 
+                //connecting to server socket with port 6000
+                clientSocket.Connect(IPAddress.Parse("127.0.0.1"), 6000);
+                stream = clientSocket.GetStream();
 
-            //joining message to server
-           byte[] ba = Encoding.ASCII.GetBytes(Constant.C2S_INITIALREQUEST);
+                //joining message to server
+                byte[] ba = Encoding.ASCII.GetBytes(s);
 
-           for (int x = 0; x < ba.Length;x++ ) {
-               Console.WriteLine(ba[x]);
-           }
+                for (int x = 0; x < ba.Length; x++)
+                {
+                    Console.WriteLine(ba[x]);
+                }
 
-           stream.Write(ba,0,ba.Length);        //send join# to server
-           stream.Flush();
-           stream.Close();          //close network stream
+                stream.Write(ba, 0, ba.Length);        //send join# to server
+                stream.Flush();
+                stream.Close();          //close network stream
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally {
+                clientSocket.Close();
+            }
         }
 
 
