@@ -98,7 +98,6 @@ namespace Tank_Client
                     {
                         playr[i] = new Player();
                     }
-
                     playerDetails(array[i],playr[i]);
                 }
                 
@@ -114,7 +113,6 @@ namespace Tank_Client
 
             String[] arNew = det.Split(';');
             grid[player.playerLocationY, player.playerLocationX] = '0';
-            
                 
             player.playerNumber = Int32.Parse(arNew[0].Substring(1));
             String[] location = arNew[1].Split(',');
