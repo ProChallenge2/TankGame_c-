@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace Tank_Client
 {
@@ -40,7 +41,7 @@ namespace Tank_Client
            stream.Close();          //close network stream
         }
 
-        public static void sendKeyData(String msg)
+        public static void sendKeyData()
          {
          
             //connecting to server socket with port 6000
@@ -48,7 +49,7 @@ namespace Tank_Client
            stream = clientSocket.GetStream();
 
             //joining message to server
-           byte[] ba = Encoding.ASCII.GetBytes(msg);
+           byte[] ba = Encoding.ASCII.GetBytes(Constant.LEFT);
 
            for (int x = 0; x < ba.Length;x++ ) {
                Console.WriteLine(ba[x]);
@@ -99,9 +100,12 @@ namespace Tank_Client
                    
                     Console.WriteLine("Response from server to join " + torkenizer.serverJoinMsg(messageFromServer));
                     torkenizer.tokenizeMessage(messageFromServer);
-                    //Console.WriteLine("eeeeeeeeeeeeeee--" + torkenizer.tokenizeMessage(messageFromServer) + "--eeeeeeeeeeeeeeee");
                     Console.WriteLine(messageFromServer);
                     serverStream.Close();       //close the netork stream
+
+                    int port = 6000;
+                   
+                //    ThreadPool.QueueUserWorkItem(new WaitCallback(GameEngine.Resolve), (object)dataObj);
                     
                    
 

@@ -102,6 +102,14 @@ namespace Tank_Client
                 }
                 
             }
+            else if (array[0] == "L")
+            { 
+                
+            }
+            else if (array[0] == "C")
+            { 
+
+            }
             mp.setGrid(grid);
             if (a & b)
             {
