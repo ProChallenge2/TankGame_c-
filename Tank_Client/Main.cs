@@ -3,10 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Net;
-using System.Net.Sockets;
-using System.IO;
-using System.Threading;
 
 namespace Tank_Client
 {
@@ -23,8 +19,7 @@ namespace Tank_Client
         bool a = false;
         bool b = false;
 
-        private static Commiunicator com = new Commiunicator();
-        int mymsg = 0;
+
         public Main()
         {
 
@@ -50,9 +45,9 @@ namespace Tank_Client
 
         }
 
-        public void tokenizeMessage(String reply) {
-
-            mymsg++;
+        public void tokenizeMessage(String reply) { 
+          
+             
             char [] del = {':','#'};
             String[] array= reply.Split(del);
             
@@ -92,7 +87,6 @@ namespace Tank_Client
                         break;
 
                 }
-
                 b = true;
 
             }
@@ -100,28 +94,37 @@ namespace Tank_Client
                
                 for (int i = 1; i < array.Length - 2; i++)
                 {
-                        if (playr[i-1] == null)
-                        {
+                    if (playr[i-1] == null)
+                    {
                         playr[i-1] = new Player();
-                        }
-
+                    }
                     playerDetails(array[i],playr[i-1]);
-               }
+                }
                 
-           }
+            }
+            else if (array[0] == "L")
+            { 
+                
+            }
+            else if (array[0] == "C")
+            { 
+
+            }
             mp.setGrid(grid);
             if (a & b)
             {
                 mp.showGrid();
             }
+<<<<<<< HEAD
            
+=======
+>>>>>>> e13d8c501d0f65f0e3556a86002d38bf044d5ce0
         }
         public void playerDetails(String det,Player player)
         {
 
             String[] arNew = det.Split(';');
             grid[player.playerLocationY, player.playerLocationX] = '0';
-            
                 
             player.playerNumber = Int32.Parse(arNew[0].Substring(1));
             String[] location = arNew[1].Split(',');
@@ -148,7 +151,16 @@ namespace Tank_Client
 
             }
 
-            
+            if (arNew[3] == "0")
+            {
+                player.Shot = false;
+            }
+            else
+                player.Shot = true;
+
+            player.Health = Int32.Parse(arNew[4]);
+            player.Coins = Int32.Parse(arNew[5]);
+            player.Points = Int32.Parse(arNew[6]);
         }
 
      
