@@ -34,6 +34,7 @@ namespace Tank_Client
         public const string S2C_TOOEARLY = "TOO_QUICK";
         public const string S2C_CELLOCCUPIED = "CELL_OCCUPIED";
         public const string S2C_HITONOBSTACLE = "OBSTACLE";//Penalty should be added.
+
         public const string S2C_FALLENTOPIT = "PITFALL";
 
         public const string S2C_NOTALIVE = "DEAD";

@@ -8,5 +8,11 @@ namespace Tank_Client.beans
 {
     class Treasure
     {
+        public int locationX { get; set; }
+        public int locationY { get; set; }
+        public int time { get; set; }
+
+        public int value { get; set; }
+
     }
 }
