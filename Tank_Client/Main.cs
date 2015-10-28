@@ -94,11 +94,11 @@ namespace Tank_Client
                
                 for (int i = 1; i < array.Length - 2; i++)
                 {
-                    if (playr[i] == null)
+                    if (playr[i-1] == null)
                     {
-                        playr[i] = new Player();
+                        playr[i-1] = new Player();
                     }
-                    playerDetails(array[i],playr[i]);
+                    playerDetails(array[i],playr[i-1]);
                 }
                 
             }
@@ -139,7 +139,16 @@ namespace Tank_Client
 
             }
 
-            
+            if (arNew[3] == "0")
+            {
+                player.Shot = false;
+            }
+            else
+                player.Shot = true;
+
+            player.Health = Int32.Parse(arNew[4]);
+            player.Coins = Int32.Parse(arNew[5]);
+            player.Points = Int32.Parse(arNew[6]);
         }
 
      
