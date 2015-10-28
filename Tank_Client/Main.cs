@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
+using System.IO;
+using System.Threading;
 
 namespace Tank_Client
 {
@@ -19,7 +23,8 @@ namespace Tank_Client
         bool a = false;
         bool b = false;
 
-
+        private static Commiunicator com = new Commiunicator();
+        int mymsg = 0;
         public Main()
         {
 
@@ -45,9 +50,9 @@ namespace Tank_Client
 
         }
 
-        public void tokenizeMessage(String reply) { 
-          
-             
+        public void tokenizeMessage(String reply) {
+
+            mymsg++;
             char [] del = {':','#'};
             String[] array= reply.Split(del);
             
@@ -87,6 +92,7 @@ namespace Tank_Client
                         break;
 
                 }
+
                 b = true;
 
             }
@@ -94,20 +100,44 @@ namespace Tank_Client
                
                 for (int i = 1; i < array.Length - 2; i++)
                 {
-                    if (playr[i] == null)
-                    {
-                        playr[i] = new Player();
-                    }
+                        if (playr[i-1] == null)
+                        {
+                        playr[i-1] = new Player();
+                        }
 
-                    playerDetails(array[i],playr[i]);
-                }
+                    playerDetails(array[i],playr[i-1]);
+               }
                 
-            }
+           }
             mp.setGrid(grid);
             if (a & b)
             {
                 mp.showGrid();
             }
+
+
+            if (mymsg == 5 )
+            {
+
+               // Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                //.WriteLine("----------------------------------");
+               // Console.WriteLine("==========sending=================");
+               // Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+               // Console.WriteLine("----------------------------------");
+                map.sendKeyData();
+            }
+
+            else if (mymsg == 10) {
+                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                 Console.WriteLine("----------------------------------");
+                 Console.WriteLine("==========sending=================");
+                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                 Console.WriteLine("----------------------------------");
+               // map.sendKeyData();
+            }
+
+            
+           
         }
         public void playerDetails(String det,Player player)
         {

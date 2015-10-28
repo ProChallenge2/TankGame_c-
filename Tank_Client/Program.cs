@@ -8,7 +8,7 @@ namespace Tank_Client
 {
     class Program
     {
-        static ConsoleKeyInfo keypress;
+        
         static void Main(string[] args)
         {
 
