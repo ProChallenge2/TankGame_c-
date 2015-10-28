@@ -22,3 +22,5 @@ D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.pdb
 D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\bin\Debug\Tank_Client.exe
 D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\bin\Debug\Tank_Client.pdb
 D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.csprojResolveAssemblyReference.cache
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.ArrowKey.resources
+D:\Semester 4\Pro challenge 2\TankGame_c-\Tank_Client\obj\Debug\Tank_Client.csproj.GenerateResource.Cache

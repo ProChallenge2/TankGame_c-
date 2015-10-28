@@ -114,29 +114,6 @@ namespace Tank_Client
             {
                 mp.showGrid();
             }
-
-
-            if (mymsg == 5 )
-            {
-
-               // Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                //.WriteLine("----------------------------------");
-               // Console.WriteLine("==========sending=================");
-               // Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-               // Console.WriteLine("----------------------------------");
-                map.sendKeyData();
-            }
-
-            else if (mymsg == 10) {
-                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                 Console.WriteLine("----------------------------------");
-                 Console.WriteLine("==========sending=================");
-                 Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-                 Console.WriteLine("----------------------------------");
-               // map.sendKeyData();
-            }
-
-            
            
         }
         public void playerDetails(String det,Player player)

@@ -12,8 +12,13 @@ namespace Tank_Client
         static void Main(string[] args)
         {
 
+            Commiunicator c = new Commiunicator();
+            ArrowKey form = new ArrowKey();
+
+            form.Show();
             //init client connection to server
-            Commiunicator.sendData();
+          //  Commiunicator.sendData();
+
 
             //init a socket for call back from the server to fetch messages
             Commiunicator.receiveData();

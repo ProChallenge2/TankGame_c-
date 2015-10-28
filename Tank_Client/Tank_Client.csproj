@@ -36,6 +36,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArrowKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ArrowKey.Designer.cs">
+      <DependentUpon>ArrowKey.cs</DependentUpon>
+    </Compile>
     <Compile Include="beans\BrickWall.cs" />
     <Compile Include="beans\Bullet.cs" />
     <Compile Include="beans\Contestant.cs" />
@@ -59,6 +66,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ArrowKey.resx">
+      <DependentUpon>ArrowKey.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
