@@ -188,6 +188,7 @@ namespace Tank_Client
                     mp.showGrid();
                 }
             }
+
         }
         public void playerDetails(String det,Player player)
         {
