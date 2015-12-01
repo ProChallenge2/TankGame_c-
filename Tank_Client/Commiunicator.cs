@@ -91,7 +91,8 @@ namespace Tank_Client
 
                     String messageFromServer = Encoding.UTF8.GetString(inputStr.ToArray());
                    
-                    Console.WriteLine("Response from server to join " + torkenizer.serverJoinMsg(messageFromServer));
+                    Console.WriteLine("Response from server to join ");
+
                     torkenizer.tokenizeMessage(messageFromServer);
                     Console.WriteLine(messageFromServer);
                     serverStream.Close();       //close the netork stream

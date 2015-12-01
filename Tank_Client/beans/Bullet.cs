@@ -9,7 +9,7 @@ namespace Tank_Client.beans
 {
     class Bullet
     {
-        Contestant shooter;
+        Player shooter;
         int[] dirData = new Int32[2];
         int id = 0;
 
@@ -25,7 +25,7 @@ namespace Tank_Client.beans
             set { dirData = value; }
         }
 
-        public Contestant Shooter
+        public Player Shooter
         {
             get { return shooter; }
             set { shooter = value; }
@@ -72,7 +72,7 @@ namespace Tank_Client.beans
             }
         }
 
-        public Bullet(Contestant con, Point origin, int dir)
+        public Bullet(Player con, Point origin, int dir)
         {
             shooter = con;
             pos = origin;

@@ -17,11 +17,11 @@ namespace Tank_Client
    
     class map
     {
-        static Socket socket = null;
-        static bool error = false;
-        static TcpListener listener;
+       // static Socket socket = null;
+       // static bool error = false;
+        //static TcpListener listener;
         static System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();      //create a TcpCLient socket to connect to server
-        static NetworkStream stream = null;
+       // static NetworkStream stream = null;
         static Main torkenizer = new Main();
         public static char[,] grid { get; set; }
 

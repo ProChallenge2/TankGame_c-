@@ -17,28 +17,11 @@ namespace Tank_Client
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Thread t1 = new Thread(
-                    new ThreadStart(
-                            delegate()
-                            {
-                                Application.Run(new ArrowKey());
-                            }
-                        )
-                );
-
-            Thread t2 = new Thread(
-                   new ThreadStart(
-                           delegate()
-                           {
-                               Commiunicator.receiveData();
-                           }
-                       )
-               );
-
-            t1.Start();
-            t2.Start();
-
-
+            // run gui to send key press message
+           ThreadPool.QueueUserWorkItem(new WaitCallback(state =>Application.Run(new ArrowKey())));
+            // run method to recive message from server continously
+           ThreadPool.QueueUserWorkItem(new WaitCallback(state =>Commiunicator.receiveData()));
+        
             while (true) { }
         }
     }

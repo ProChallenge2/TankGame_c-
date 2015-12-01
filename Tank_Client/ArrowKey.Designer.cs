@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(105, 52);
+            this.button1.Location = new System.Drawing.Point(108, 46);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 42);
             this.button1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(186, 100);
+            this.button2.Location = new System.Drawing.Point(189, 94);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 42);
             this.button2.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(105, 145);
+            this.button3.Location = new System.Drawing.Point(108, 139);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 42);
             this.button3.TabIndex = 2;
@@ -69,7 +69,7 @@
             // button4
             // 
             this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Location = new System.Drawing.Point(24, 100);
+            this.button4.Location = new System.Drawing.Point(27, 94);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 42);
             this.button4.TabIndex = 3;
@@ -79,9 +79,10 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button5.ForeColor = System.Drawing.Color.Blue;
-            this.button5.Location = new System.Drawing.Point(105, 100);
+            this.button5.BackColor = System.Drawing.Color.Gray;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.Lavender;
+            this.button5.Location = new System.Drawing.Point(108, 94);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 42);
             this.button5.TabIndex = 4;
@@ -91,10 +92,11 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button6.Location = new System.Drawing.Point(24, 222);
+            this.button6.BackColor = System.Drawing.Color.Silver;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(201, 230);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(235, 27);
+            this.button6.Size = new System.Drawing.Size(123, 27);
             this.button6.TabIndex = 5;
             this.button6.Text = "Shoot";
             this.button6.UseVisualStyleBackColor = false;
@@ -104,7 +106,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(303, 261);
+            this.ClientSize = new System.Drawing.Size(348, 299);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
@@ -112,7 +114,8 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "ArrowKey";
-            this.Text = "ArrowKey";
+            this.Text = "Game Tank";
+            this.Load += new System.EventHandler(this.ArrowKey_Load);
             this.ResumeLayout(false);
 
         }

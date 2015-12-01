@@ -8,10 +8,6 @@ namespace Tank_Client
 {
     class Main
     {
-
-        private const String PLAYERS_FULL = "PLAYERS_FULL#";
-        private const String ALREADY_ADDED = "ALREADY_ADDED#";
-        private const String GAME_ALREADY_STARTED = "GAME_ALREADY_STARTED";
         private Player player = new Player();
         beans.LifePack lifePack = new beans.LifePack();
         beans.Treasure treasure = new beans.Treasure();
@@ -35,21 +31,16 @@ namespace Tank_Client
             return "JOIN#";
         }
 
-        public int serverJoinMsg(String reply)
-        {
-            switch (reply)
-            {
-                case PLAYERS_FULL: return 1;
-                case ALREADY_ADDED: return 2;
-                case GAME_ALREADY_STARTED: return 3;
-                default: return 0;
-            }
-
-        }
-
+       /*
+        this method is used to tokenize and identify the server message
+        */
         public void tokenizeMessage(String msg) {
+
+            // split from #
             String[] reply = msg.Split('#');
 
+
+            
             if (reply[0] == Constant.S2C_GAMESTARTED) 
             {
                 Console.WriteLine("Game is started.");
@@ -106,7 +97,7 @@ namespace Tank_Client
 
                 char[] del = { ':' };
                 String[] array = reply[0].Split(del);
-
+                // identify whether the message is initial meg
 
                 if (array[0] == "I")
                 {
@@ -119,6 +110,8 @@ namespace Tank_Client
 
 
                 }
+
+                // identify the message is about response to join
                 else if (array[0] == "S")
                 {
                     String[] arrayNew = array[1].Split(';');
@@ -151,8 +144,11 @@ namespace Tank_Client
                 }
                 else if (array[0] == "G")
                 {
-
-                    for (int i = 1; i < array.Length - 2; i++)
+                    Console.WriteLine("");
+                    Console.WriteLine("------------------------Player Score------------------------");
+                    Console.WriteLine("");
+                    Console.WriteLine("Player    Health    Coins    Points");
+                    for (int i = 1; i < array.Length - 1; i++)
                     {
                         if (playr[i - 1] == null)
                         {
@@ -160,7 +156,7 @@ namespace Tank_Client
                         }
                         playerDetails(array[i], playr[i - 1]);
                     }
-
+                    Console.WriteLine("-----------------------------------------------------------");
                 }
                 else if (array[0] == "L")
                 {
@@ -231,6 +227,9 @@ namespace Tank_Client
             player.Health = Int32.Parse(arNew[4]);
             player.Coins = Int32.Parse(arNew[5]);
             player.Points = Int32.Parse(arNew[6]);
+           
+            Console.WriteLine(player.playerNumber+"        "+player.Health+"        "+player.Coins+"         "+player.Points);
+            
         }
 
      
